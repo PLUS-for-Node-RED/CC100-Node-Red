@@ -1,0 +1,57 @@
+<!-- Analog IN 1 -->
+<script type="text/javascript">
+  RED.nodes.registerType('Read-AI1', {
+    category: 'WAGO CC100',
+    color: '#00FF00',
+    defaults: {
+      name: { value: '' }
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: 'feed.svg',
+    label: function () {
+      return this.name || 'Read-AI1'
+    }
+  })
+</script>
+
+<script type="text/html" data-template-name="Read-AI1">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="Read-AI1">
+    <p>Node read Analog Input 1 on CC100 PLC</p>
+</script>
+<!-- Analog In 1 -->
+
+<!-- Analog In 2 -->
+<script type="text/javascript">
+  RED.nodes.registerType('Read-AI2', {
+    category: 'WAGO CC100',
+    color: '#00FF00',
+    defaults: {
+      name: { value: '' }
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: 'feed.svg',
+    label: function () {
+      return this.name || 'Read-AI2'
+    }
+  })
+</script>
+
+<script type="text/html" data-template-name="Read-AI2">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="Read-AI2">
+    <p>Node read Analog Input 2 on CC100 PLC</p>
+</script>
+<!-- Analog In 2 -->

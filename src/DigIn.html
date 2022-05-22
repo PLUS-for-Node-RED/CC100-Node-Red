@@ -1,0 +1,34 @@
+<!-- Digital-In -->
+<script type="text/javascript">
+  RED.nodes.registerType('Read-DI', {
+    category: 'WAGO CC100',
+    color: '#FFFF00',
+    defaults: {
+      name: { value: '' }
+    },
+    inputs: 1,
+    outputs: 10,
+    icon: 'feed.svg',
+    label: function () {
+      return this.name || 'Read-DI'
+    }
+  })
+</script>
+
+<script type="text/html" data-template-name="Read-DI">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="Read-DI">
+    <p>Node to read all Digital Input states on CC100 PLC</p>
+
+    <ul>
+        <li>Output 1-8 : DI 1-8
+        <li>Output 9: All DI's as JSON object with named key:value
+        <li>Output 10: Array from the DI values 1-8
+    </ul>
+</script>
+<!-- Digital-In -->

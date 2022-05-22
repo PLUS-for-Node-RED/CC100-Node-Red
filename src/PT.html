@@ -1,0 +1,57 @@
+<!-- Analog PT 1 -->
+<script type="text/javascript">
+  RED.nodes.registerType('Read-PT1', {
+    category: 'WAGO CC100',
+    color: '#00FF00',
+    defaults: {
+      name: { value: '' }
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: 'feed.svg',
+    label: function () {
+      return this.name || 'Read-PT1'
+    }
+  })
+</script>
+
+<script type="text/html" data-template-name="Read-PT1">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="Read-PT1">
+    <p>Node read PT1000 Input 1 on CC100 PLC</p>
+</script>
+<!-- Analog PT 1 -->
+
+<!-- Analog PT 2 -->
+<script type="text/javascript">
+  RED.nodes.registerType('Read-PT2', {
+    category: 'WAGO CC100',
+    color: '#00FF00',
+    defaults: {
+      name: { value: '' }
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: 'feed.svg',
+    label: function () {
+      return this.name || 'Read-PT2'
+    }
+  })
+</script>
+
+<script type="text/html" data-template-name="Read-PT2">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="Read-PT2">
+    <p>Node read PT1000 Input 1 on CC100 PLC</p>
+</script>
+<!-- Analog PT 2 -->

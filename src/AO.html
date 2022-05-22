@@ -1,0 +1,92 @@
+<!-- Analog Out 1 -->
+<script type="text/javascript">
+  RED.nodes.registerType('Set-AO1', {
+    category: 'WAGO CC100',
+    color: '#4169E1',
+    defaults: {
+      name: { value: '' }
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: 'arrow-in.svg',
+    label: function () {
+      return this.name || 'Set-AO1'
+    }
+  })
+</script>
+
+<script type="text/html" data-template-name="Set-AO1">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="Set-AO1">
+    <p>Node write Analog Output 1 to CC100 PLC</p>
+</script>
+<!-- Analog Out 1 -->
+
+<!-- Analog Out 2 -->
+<script type="text/javascript">
+  RED.nodes.registerType('Set-AO2', {
+    category: 'WAGO CC100',
+    color: '#4169E1',
+    defaults: {
+      name: { value: '' }
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: 'arrow-in.svg',
+    label: function () {
+      return this.name || 'Set-AO2'
+    }
+  })
+</script>
+
+<script type="text/html" data-template-name="Set-AO2">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="Set-AO2">
+    <p>Node write Analog Output 1 to CC100 PLC</p>
+</script>
+<!-- Analog Out 2 -->
+
+<!-- Read Analog Out -->
+<script type="text/javascript">
+  RED.nodes.registerType('Read-AO', {
+    category: 'WAGO CC100',
+    color: '#4169E1',
+    defaults: {
+      name: { value: '' }
+    },
+    inputs: 1,
+    outputs: 2,
+    icon: 'feed.svg',
+    label: function () {
+      return this.name || 'Read-AO'
+    }
+  })
+</script>
+
+<script type="text/html" data-template-name="Read-AO">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="Read-AO">
+    <p>Node to read all Analog Output values on CC100 PLC</p>
+
+    <ul>
+        <li>Output 1-2 : AO 1-2
+        <li>Output 2: All AO's as JSON object with named key:value
+        <li>Output 6: Array from the DO values 1-4
+    </ul>
+</script>
+<!-- Read Analog Out -->

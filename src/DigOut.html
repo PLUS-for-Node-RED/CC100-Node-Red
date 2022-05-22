@@ -1,0 +1,154 @@
+<!-- Digital-Out 1 -->
+<script type="text/javascript">
+  RED.nodes.registerType('Set-DO1', {
+    category: 'WAGO CC100',
+    color: '#FF0000',
+    defaults: {
+      name: { value: '' }
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: 'arrow-in.svg',
+    label: function () {
+      return this.name || 'Set-DO1'
+    }
+  })
+</script>
+
+<script type="text/html" data-template-name="Set-DO1">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="Set-DO1">
+    <p>Node write Digital Output 1 to CC100 PLC</p>
+</script>
+<!-- Digital-Out 1 -->
+
+
+<!-- Digital-Out 2 -->
+<script type="text/javascript">
+  RED.nodes.registerType('Set-DO2', {
+    category: 'WAGO CC100',
+    color: '#FF0000',
+    defaults: {
+      name: { value: '' }
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: 'arrow-in.svg',
+    label: function () {
+      return this.name || 'Set-DO2'
+    }
+  })
+</script>
+
+<script type="text/html" data-template-name="Set-DO2">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="Set-DO2">
+    <p>Node write Digital Output 2 to CC100 PLC</p>
+</script>
+<!-- Digital-Out 2 -->
+
+
+<!-- Digital-Out 3 -->
+<script type="text/javascript">
+  RED.nodes.registerType('Set-DO3', {
+    category: 'WAGO CC100',
+    color: '#FF0000',
+    defaults: {
+      name: { value: '' }
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: 'arrow-in.svg',
+    label: function () {
+      return this.name || 'Set-DO3'
+    }
+  })
+</script>
+
+<script type="text/html" data-template-name="Set-DO3">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="Set-DO3">
+    <p>Node write Digital Output 3 to CC100 PLC</p>
+</script>
+<!-- Digital-Out 3 -->
+
+
+<!-- Digital-Out 4 -->
+<script type="text/javascript">
+  RED.nodes.registerType('Set-DO4', {
+    category: 'WAGO CC100',
+    color: '#FF0000',
+    defaults: {
+      name: { value: '' }
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: 'arrow-in.svg',
+    label: function () {
+      return this.name || 'Set-DO4'
+    }
+  })
+</script>
+
+<script type="text/html" data-template-name="Set-DO4">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="Set-DO4">
+    <p>Node write Digital Output 4 to CC100 PLC</p>
+</script>
+<!-- Digital-Out 4 -->
+
+
+<!-- Digital-Out -->
+<script type="text/javascript">
+  RED.nodes.registerType('Read-DO', {
+    category: 'WAGO CC100',
+    color: '#FF0000',
+    defaults: {
+      name: { value: '' }
+    },
+    inputs: 1,
+    outputs: 6,
+    icon: 'arrow-in.svg',
+    label: function () {
+      return this.name || 'Read-DO'
+    }
+  })
+</script>
+
+<script type="text/html" data-template-name="Read-DO">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="Read-DO">
+    <p>Node read all Digital Output states on CC100 PLC</p>
+
+    <ul>
+        <li>Output 1-4 : DO 1-4
+        <li>Output 5: All DO's as JSON object with named key:value
+        <li>Output 6: Array from the DO values 1-4
+    </ul>
+</script>
+<!-- Digital-Out -->

@@ -1,0 +1,12 @@
+code/
+node_modules
+npm-debug.log
+cc100
+node_modules_*/
+docs/icons
+.idea/
+docs/gen/
+coverage/
+.coverage/
+pki/
+.vscode/
