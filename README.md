@@ -1,5 +1,5 @@
 ![Platform Node-RED](http://b.repl.ca/v1/Platform-Node--RED-red.png)
-![Contribution WAGO-CC100](http://b.repl.ca/v1/Contribution-WAGO-CC100-orange.png)
+![Contribution WAGO-CC100](http://b.repl.ca/v1/Contribution-WAGO--CC100-orange.png)
 [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 [![NPM download](https://img.shields.io/npm/dm/node-red-contrib-wago-cc100.svg)](http://www.npm-stats.com/~packages/node-red-contrib-wago-cc100)
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Helmut-Saal/CC100-Node-Red)
