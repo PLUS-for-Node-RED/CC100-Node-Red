@@ -1,7 +1,7 @@
 ![Platform Node-RED](http://b.repl.ca/v1/Platform-Node--RED-red.png)
 ![Contribution WAGO-CC100](http://b.repl.ca/v1/Contribution-WAGO--CC100-orange.png)
 [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
-[![NPM download](https://img.shields.io/npm/dm/node-red-contrib-wago-cc100.svg)](http://www.npm-stats.com/~packages/node-red-contrib-wago-cc100)
+[![NPM download](https://img.shields.io/npm/dm/node-red-contrib-wago-cc100.svg)](https://npm-stat.com/charts.html?package=node-red-contrib-wago-cc100)
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Helmut-Saal/CC100-Node-Red)
 
 # WAGO CC100 Node-RED Contribution Package
@@ -76,7 +76,10 @@ if you want to use that space for other containers.
 
 ## Contributors
 
-This project exists thanks to all the people who contribute. [[Contributing Information](./.github/CONTRIBUTING.md)].
+This project exists thanks to all the people who contribute. 
+
+[Contributing Information](./.github/CONTRIBUTING.md)
+
 <a href="https://github.com/Helmut-Saal/CC100-Node-Red/graphs/contributors">Contributors Graph</a>
 
 ## For Developers

@@ -23,7 +23,6 @@
   "scripts": {
     "changelog": "npm run rewrite-changelog",
     "test": "standard --fix && mocha test --recursive --reporter dot --timeout 5000",
-    "test-with-coverage": "istanbul cover _mocha --report lcovonly -- --recursive --timeout 5000 -R spec && cat ./coverage/lcov.info | codacy-coverage --token $CODACY_COVERAGE_TOKEN && rm -rf ./coverage",
     "coverage": "standard --fix && gulp build && npm test && istanbul cover _mocha -- --recursive --timeout 5000",
     "build": "standard --fix && gulp",
     "prepublishOnly": "npm run build && npm run rewrite-changelog && npm test",
