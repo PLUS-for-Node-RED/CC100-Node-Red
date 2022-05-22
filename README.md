@@ -76,7 +76,7 @@ if you want to use that space for other containers.
 
 ## Contributors
 
-This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
+This project exists thanks to all the people who contribute. [[Contributing Information](./.github/CONTRIBUTING.md)].
 <a href="https://github.com/Helmut-Saal/CC100-Node-Red/graphs/contributors">Contributors Graph</a>
 
 ## For Developers

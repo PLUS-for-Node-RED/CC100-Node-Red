@@ -1,6 +1,6 @@
 # Contributing to node-red-contrib-wago-cc100
 
-As in Node-RED we have some guidelines for the Modbus contribution package.
+As in Node-RED we have some guidelines for the contribution package.
 We welcome contributions, but request you follow these guidelines.
 
  - [Coding rules](#coding-rules)
