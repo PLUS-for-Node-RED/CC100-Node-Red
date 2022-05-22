@@ -137,7 +137,7 @@ module.exports = {
             let valueNumber = coreAnalogInternal.calculateVoltage(Number(data))
             msgPort02.payload = valueNumber.toFixed(2)
 
-            node.send([msgPort01, msgPort02])
+            return node.send([msgPort01, msgPort02])
           }
         })
       }
