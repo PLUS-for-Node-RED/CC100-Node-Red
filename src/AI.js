@@ -1,31 +1,15 @@
+
 module.exports = function (RED) {
-  const AI1PID = '/sys/bus/iio/devices/iio:device3/in_voltage3_raw'
-  const AI2PID = '/sys/bus/iio/devices/iio:device3/in_voltage0_raw'
+  const coreAnalog = require('./core/core-analog')
 
   // Read Analog Input 1
   function readAI1 (config) {
+    const AI1PID = '/sys/bus/iio/devices/iio:device3/in_voltage3_raw'
+
     RED.nodes.createNode(this, config)
     const node = this
     node.on('input', function (msg) {
-      const fs = require('fs')
-      fs.readFile(AI1PID, function (err, data) {
-        if (err) {
-          node.error(err, 'Error while reading AI1PID')
-          node.status({ fill: 'red', shape: 'ring', text: 'Failed' })
-          return console.log(err)
-        } else {
-          if (RED.settings.verbose) {
-            console.log('Read AI 1 on CC100 was successful.')
-            console.log('Raw Data: ' + data.toString())
-          }
-          node.status({ fill: 'green', shape: 'ring', text: 'OK' })
-          let numb = Math.round(data / 560) / 10.0
-          numb = numb.toFixed(2)
-          msg.payload = numb
-          msg.payload = Number(msg.payload)
-          node.send(msg)
-        }
-      })
+      coreAnalog.readAnalogInput(node, AI1PID, "AI1PID")
     })
   }
 
@@ -33,28 +17,12 @@ module.exports = function (RED) {
 
   // Read Analog Input 2
   function readAI2 (config) {
-    const fs = require('fs')
+    const AI2PID = '/sys/bus/iio/devices/iio:device3/in_voltage0_raw'
+
     RED.nodes.createNode(this, config)
     const node = this
     node.on('input', function (msg) {
-      fs.readFile(AI2PID, function (err, data) {
-        if (err) {
-          node.error(err, 'Error while reading AI2PID')
-          node.status({ fill: 'red', shape: 'ring', text: 'Failed' })
-          return console.log(err)
-        } else {
-          if (RED.settings.verbose) {
-            console.log('Read AI 2 on CC100 was successful.')
-            console.log('Raw Data: ' + data.toString())
-          }
-          node.status({ fill: 'green', shape: 'ring', text: 'OK' })
-          let numb = Math.round(data / 560) / 10.0
-          numb = numb.toFixed(2)
-          msg.payload = numb
-          msg.payload = Number(msg.payload)
-          node.send(msg)
-        }
-      })
+      coreAnalog.readAnalogInput(node, AI2PID, "AI2PID")
     })
   }
 
