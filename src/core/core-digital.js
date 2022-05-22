@@ -14,9 +14,11 @@ const do2 = 2
 const do3 = 4
 const do4 = 8
 
-// core digital functions to get them tested
 module.exports = {
-  verboseMode: false,
+
+  // core digital functions to get them tested
+
+  verboseMode: true,
 
   getDigitalInputValue (inputNumber) {
     switch (inputNumber) {

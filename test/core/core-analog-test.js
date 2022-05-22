@@ -9,6 +9,10 @@ const assert = require('chai').assert
 describe('Analog', function () {
 
   describe('analog core input functions', function () {
+    it('should have value check message with min and max', function (done) {
+      assert.equal(coreDigital.isNotValidMessage(), 'Value not allowed, has to be >= 0 and <= 10')
+      done()
+    })
     it('should have value zero on wrong analog input zero', function (done) {
       assert.equal(coreDigital.getNumberFromAnalogData(0), 0.00)
       done()
