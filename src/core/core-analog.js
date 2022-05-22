@@ -1,4 +1,3 @@
-
 const fs = require('fs')
 
 const ANALOG_INPUT_MIN_VALUE = 0

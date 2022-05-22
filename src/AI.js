@@ -1,4 +1,3 @@
-
 module.exports = function (RED) {
   const coreAnalog = require('./core/core-analog')
 

@@ -20,6 +20,8 @@ module.exports = {
 
   verboseMode: true,
 
+  monitor: false,
+
   getDigitalInputValue (inputNumber) {
     switch (inputNumber) {
       case 1:
@@ -158,5 +160,54 @@ module.exports = {
         return node.send(messagesToSend)
       }
     })
+  },
+
+  writeDigitalOutput (node, msg, ioToWrite, ioName, digitalValue) {
+    const coreDigitalInternal = this
+
+    if (coreDigitalInternal.monitor === false) {
+      coreDigitalInternal.monitor = true
+
+      // Read the state of the Output from file
+      fs.readFile(ioToWrite, function (err, data) {
+        if (err) {
+          node.error(err, 'Error while reading ' + ioName)
+          node.status({ fill: 'red', shape: 'ring', text: 'Failed' })
+          return console.log(err)
+        } else {
+          let value = Number(data)
+
+          // Write the Digital Output 1 (value) if needed
+          if (msg.payload === true & ((value & digitalValue) !== digitalValue)) {
+            value = (value + digitalValue)
+            msg.payload = value
+          } else if (msg.payload === false & ((value & digitalValue) === digitalValue)) {
+            value = (value - digitalValue)
+            msg.payload = value
+          } else {
+            msg.payload = value
+          }
+
+          // Write the Digital Output to file
+          fs.writeFile(ioToWrite, String(msg.payload), function (err) {
+            if (err) {
+              node.error(err, 'Error while writing ' + ioName)
+              node.status({ fill: 'red', shape: 'ring', text: 'Failed' })
+
+              return console.log(err)
+            } else {
+              msg.payload = msg.payload & (value & digitalValue)
+              coreDigitalInternal.monitor = false
+              node.status({ fill: 'green', shape: 'ring', text: 'OK' })
+
+              return node.send(msg)
+            }
+          })
+        }
+      })
+    } else {
+      node.warn(ioName + ' blocked on operation')
+      node.status({ fill: 'yellow', shape: 'ring', text: 'Blocked' })
+    }
   }
 }
