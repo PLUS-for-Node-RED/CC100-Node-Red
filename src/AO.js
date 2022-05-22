@@ -13,7 +13,6 @@ module.exports = function (RED) {
     const node = this
 
     node.on('input', function (msg) {
-
       const ioStructure = {
         ioPowerDown: {
           ioPath: AO1OnPID,
@@ -39,7 +38,6 @@ module.exports = function (RED) {
     const node = this
 
     node.on('input', function (msg) {
-
       const ioWriteStructure = {
         ioPowerDown: {
           ioPath: AO2OnPID,
@@ -65,7 +63,6 @@ module.exports = function (RED) {
     const node = this
 
     node.on('input', function (msg) {
-
       const ioReadStructure = [
         {
           ioPath: AO1PID,

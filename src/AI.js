@@ -9,7 +9,7 @@ module.exports = function (RED) {
     RED.nodes.createNode(this, config)
     const node = this
     node.on('input', function (msg) {
-      coreAnalog.readAnalogInput(node, AI1PID, "AI1PID")
+      coreAnalog.readAnalogInput(node, AI1PID, 'AI1PID')
     })
   }
 
@@ -22,7 +22,7 @@ module.exports = function (RED) {
     RED.nodes.createNode(this, config)
     const node = this
     node.on('input', function (msg) {
-      coreAnalog.readAnalogInput(node, AI2PID, "AI2PID")
+      coreAnalog.readAnalogInput(node, AI2PID, 'AI2PID')
     })
   }
 

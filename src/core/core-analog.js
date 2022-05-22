@@ -3,52 +3,52 @@ const fs = require('fs')
 
 const ANALOG_INPUT_MIN_VALUE = 0
 const ANALOG_INPUT_MAX_VALUE = 10
-const ANALOG_ON = 0
 
 module.exports = {
   // core analog functions to get them tested
 
   verboseMode: true,
 
-  checkAnalogOutputValue(numberForAnalogInput) {
+  checkAnalogOutputValue (numberForAnalogInput) {
     return !Number.isNaN(numberForAnalogInput) &&
       numberForAnalogInput >= ANALOG_INPUT_MIN_VALUE &&
       numberForAnalogInput <= ANALOG_INPUT_MAX_VALUE
   },
 
-  isNotValidMessage() {
+  isNotValidMessage () {
     return 'Value not allowed, has to be >= ' + ANALOG_INPUT_MIN_VALUE +
-      ' and <= '+ ANALOG_INPUT_MAX_VALUE
+      ' and <= ' + ANALOG_INPUT_MAX_VALUE
   },
 
-  getNumberFromAnalogData(data) {
+  getNumberFromAnalogData (data) {
     const numberData = Number(data)
-    const calculatedNumber = Math.round(numberData / 560 ) / 10.0
+    const calculatedNumber = Math.round(numberData / 560) / 10.0
     return Number(calculatedNumber.toFixed(2))
   },
 
   readAnalogInput (node, ioToRead, ioName) {
     fs.readFile(ioToRead, function (err, data) {
-
       if (err) {
         node.error(err, 'Error while reading ' + ioName)
         node.status({ fill: 'red', shape: 'ring', text: 'Failed' })
 
         return console.log(err)
       } else {
-        msg.payload = this.getNumberFromAnalogData(data)
-        node.status({ fill: 'green', shape: 'ring', text: 'OK' })
+        const msg = {
+          payload: this.getNumberFromAnalogData(data)
+        }
 
+        node.status({ fill: 'green', shape: 'ring', text: 'OK' })
         return node.send(msg)
       }
     })
   },
 
-  calculateVoltageRaw(voltage) {
+  calculateVoltageRaw (voltage) {
     return Math.round(voltage * 335)
   },
 
-  calculateVoltage(voltageRaw) {
+  calculateVoltage (voltageRaw) {
     return Math.round(voltageRaw / 335)
   },
 
@@ -56,15 +56,14 @@ module.exports = {
     // Write the Analog Output Power Down
     fs.writeFile(ioWriteStructure.ioPowerDown.ioPath, String(ioWriteStructure.ioPowerDown.ioValue), function (err) {
       if (err) {
-        node.error(err, 'Error while writing '+ ioWriteStructure.ioPowerDown.ioName)
+        node.error(err, 'Error while writing ' + ioWriteStructure.ioPowerDown.ioName)
         node.status({ fill: 'red', shape: 'ring', text: 'Failed' })
         return console.log(err)
       } else {
-
         // Write the Analog Output Raw
         fs.writeFile(ioWriteStructure.ioRaw.ioPath, String(ioWriteStructure.ioRaw.ioValue), function (err) {
           if (err) {
-            node.error(err, 'Error while writing '+ ioWriteStructure.ioRaw.ioName)
+            node.error(err, 'Error while writing ' + ioWriteStructure.ioRaw.ioName)
             node.status({ fill: 'red', shape: 'ring', text: 'Failed' })
             return console.log(err)
           } else {
@@ -76,12 +75,12 @@ module.exports = {
     })
   },
 
-  setAnalogOutput(node, msg, ioWriteStructure) {
+  setAnalogOutput (node, msg, ioWriteStructure) {
     const voltage = Number(msg.payload)
 
     if (this.checkAnalogOutputValue(voltage)) {
       ioWriteStructure.ioRaw.ioValue = this.calculateVoltageRaw(voltage)
-      this.writeAnalogOutput (node, msg, ioWriteStructure)
+      this.writeAnalogOutput(node, msg, ioWriteStructure)
     } else {
       if (this.verboseMode) {
         console.log(this.isNotValidMessage())
@@ -90,16 +89,15 @@ module.exports = {
     }
   },
 
-  readAnalogOutput(node, ioPath, ioName) {
+  readAnalogOutput (node, ioPath, ioName) {
     fs.readFile(ioPath, function (err, data) {
-
       if (err) {
         node.error(err, 'Error while reading ' + ioName)
         node.status({ fill: 'red', shape: 'ring', text: 'Failed' })
 
         return console.log(err)
       } else {
-        let valueNumber = this.calculateVoltage(Number(data))
+        const valueNumber = this.calculateVoltage(Number(data))
         const msg = {
           payload: valueNumber.toFixed(2)
         }
@@ -110,7 +108,7 @@ module.exports = {
     })
   },
 
-  readAnalogOutputs(node, ioReadStructure) {
+  readAnalogOutputs (node, ioReadStructure) {
     const coreAnalogInternal = this
 
     const msgPort01 = { payload: 0 }
@@ -123,8 +121,7 @@ module.exports = {
 
         return console.log(err)
       } else {
-
-        let valueNumber = coreAnalogInternal.calculateVoltage(Number(data))
+        const valueNumber = coreAnalogInternal.calculateVoltage(Number(data))
         msgPort01.payload = valueNumber.toFixed(2)
 
         fs.readFile(ioReadStructure[1].ioPath, function (err, data) {
@@ -133,8 +130,7 @@ module.exports = {
             node.status({ fill: 'red', shape: 'ring', text: 'Failed' })
             return console.log(err)
           } else {
-
-            let valueNumber = coreAnalogInternal.calculateVoltage(Number(data))
+            const valueNumber = coreAnalogInternal.calculateVoltage(Number(data))
             msgPort02.payload = valueNumber.toFixed(2)
 
             return node.send([msgPort01, msgPort02])
