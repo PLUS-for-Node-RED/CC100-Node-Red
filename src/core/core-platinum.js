@@ -7,8 +7,10 @@ module.exports = {
   verboseMode: true,
 
   getPlatinumScale (dataNumber) {
+    // TODO: better name for the parameter?
     let scale = 0
 
+    // TODO: name values what it is: factor, rangeXXDegree or a better naming?
     if (dataNumber >= 600 && dataNumber < 3600) {
       scale = 37
     } else if (dataNumber >= 3600 && dataNumber < 6700) {
@@ -33,20 +35,20 @@ module.exports = {
   calculatePlatinumValue (data) {
     const dataNumber = Number(data)
     const scale = this.getPlatinumScale(dataNumber)
-    return dataNumber / scale - 200
+    return Number(dataNumber / scale - 200)
   },
 
   readPlatinumInput (node, msg, ioPath, ioName) {
     const corePlatinumInternal = this
 
-    fs.readFile(ioPath, function (err, data) {
+    fs.readFile(ioPath, function (err, ioBufferData) {
       if (err) {
         node.error(err, 'Error while reading ' + ioName)
         node.status({ fill: 'red', shape: 'ring', text: 'Failed' })
 
         return console.log(err)
       } else {
-        const calculatedValue = corePlatinumInternal.calculatePlatinumValue(data)
+        const calculatedValue = corePlatinumInternal.calculatePlatinumValue(ioBufferData)
         msg.payload = calculatedValue.toFixed(1)
 
         node.status({ fill: 'green', shape: 'ring', text: 'OK' })

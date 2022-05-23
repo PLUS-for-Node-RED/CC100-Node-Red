@@ -20,7 +20,7 @@ module.exports = {
 
   verboseMode: true,
 
-  monitor: false,
+  lockReadWrite: false,
 
   getDigitalInputValue (inputNumber) {
     switch (inputNumber) {
@@ -102,6 +102,8 @@ module.exports = {
   },
 
   readDigitalInputs (node, ioToRead, ioName) {
+    const coreDigitalInternal = this
+
     fs.readFile(ioToRead, function (err, data) {
       if (err) {
         node.error(err, 'Error while reading ' + ioName)
@@ -110,7 +112,7 @@ module.exports = {
         return console.log(err)
       } else {
         const values = Number(data.toString().split(':'))
-        const messagesToSend = this.buildInputMessagesToSend(values)
+        const messagesToSend = coreDigitalInternal.buildInputMessagesToSend(values)
         node.status({ fill: 'green', shape: 'ring', text: 'OK' })
 
         return node.send(messagesToSend)
@@ -146,6 +148,8 @@ module.exports = {
   },
 
   readDigitalOutputs (node, ioToRead, ioName) {
+    const coreDigitalInternal = this
+
     fs.readFile(ioToRead, function (err, data) {
       if (err) {
         node.error(err, 'Error while reading ' + ioName)
@@ -154,7 +158,7 @@ module.exports = {
         return console.log(err)
       } else {
         const values = Number(data.toString().split(':'))
-        const messagesToSend = this.buildOutputMessagesToSend(values)
+        const messagesToSend = coreDigitalInternal.buildOutputMessagesToSend(values)
         node.status({ fill: 'green', shape: 'ring', text: 'OK' })
 
         return node.send(messagesToSend)
@@ -162,11 +166,24 @@ module.exports = {
     })
   },
 
+  getDigitalValueFromInput (msgValue, data, digitalValue) {
+    // TODO: check here if all is correct after refactor, please
+    const value = Number(data)
+
+    if (msgValue === true & ((value & digitalValue) !== digitalValue)) {
+      return (value + digitalValue)
+    } else if (msgValue === false & ((value & digitalValue) === digitalValue)) {
+      return (value - digitalValue)
+    }
+
+    return value
+  },
+
   writeDigitalOutput (node, msg, ioToWrite, ioName, digitalValue) {
     const coreDigitalInternal = this
 
-    if (coreDigitalInternal.monitor === false) {
-      coreDigitalInternal.monitor = true
+    if (coreDigitalInternal.lockReadWrite === false) {
+      coreDigitalInternal.lockReadWrite = true
 
       // Read the state of the Output from file
       fs.readFile(ioToWrite, function (err, data) {
@@ -175,29 +192,19 @@ module.exports = {
           node.status({ fill: 'red', shape: 'ring', text: 'Failed' })
           return console.log(err)
         } else {
-          let value = Number(data)
-
-          // Write the Digital Output 1 (value) if needed
-          if (msg.payload === true & ((value & digitalValue) !== digitalValue)) {
-            value = (value + digitalValue)
-            msg.payload = value
-          } else if (msg.payload === false & ((value & digitalValue) === digitalValue)) {
-            value = (value - digitalValue)
-            msg.payload = value
-          } else {
-            msg.payload = value
-          }
+          // Write the Digital Output (value) if needed
+          const value = coreDigitalInternal.getDigitalValueFromInput(msg.payload, data, digitalValue)
 
           // Write the Digital Output to file
-          fs.writeFile(ioToWrite, String(msg.payload), function (err) {
+          fs.writeFile(ioToWrite, String(value), function (err) {
             if (err) {
               node.error(err, 'Error while writing ' + ioName)
               node.status({ fill: 'red', shape: 'ring', text: 'Failed' })
 
               return console.log(err)
             } else {
-              msg.payload = msg.payload & (value & digitalValue)
-              coreDigitalInternal.monitor = false
+              msg.payload = msg.payload & (value & digitalValue) // TODO: is that to combine with msg.payload? maybe value & digitalValue is enough
+              coreDigitalInternal.lockReadWrite = false
               node.status({ fill: 'green', shape: 'ring', text: 'OK' })
 
               return node.send(msg)
@@ -206,7 +213,7 @@ module.exports = {
         }
       })
     } else {
-      node.warn(ioName + ' blocked on operation')
+      node.warn(ioName + ' read-write lock on operation')
       node.status({ fill: 'yellow', shape: 'ring', text: 'Blocked' })
     }
   }
