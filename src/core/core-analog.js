@@ -146,11 +146,13 @@ module.exports = {
           if (err) {
             node.error(err, 'Error while reading ' + ioReadStructure[1].ioName)
             node.status({ fill: 'red', shape: 'ring', text: 'Failed' })
+
             return console.log(err)
           } else {
             const valueNumber = coreAnalogInternal.calculateVoltage(Number(ioBufferData2))
             msgPort02.payload = valueNumber.toFixed(2)
 
+            node.status({ fill: 'green', shape: 'ring', text: 'OK' })
             return node.send([msgPort01, msgPort02])
           }
         })

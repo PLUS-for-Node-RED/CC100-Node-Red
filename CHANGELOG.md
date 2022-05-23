@@ -1,4 +1,8 @@
-# 0.1.0 (2022-05-23)
+## [0.1.1](https://github.com/Iniationware/CC100-Node-Red/compare/v0.1.0...v0.1.1) (2022-05-23)
+
+
+
+# [0.1.0](https://github.com/Iniationware/CC100-Node-Red/compare/8a2d5012aac8c40a56e51eed38d5a551f0f8d941...v0.1.0) (2022-05-23)
 
 
 ### Bug Fixes

@@ -10,7 +10,7 @@
     },
     "version": ">=2.0.0"
   },
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A WAGO CC100 contribution package for Node-RED. It gives you access to the IO's of the CC100.",
   "main": "node",
   "files": [
