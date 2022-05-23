@@ -1,4 +1,13 @@
+## [0.1.4](https://github.com/Iniationware/CC100-Node-Red/compare/v0.1.3...v0.1.4) (2022-05-23)
+
+
+
 ## [0.1.3](https://github.com/Iniationware/CC100-Node-Red/compare/v0.1.1...v0.1.3) (2022-05-23)
+
+
+### Bug Fixes
+
+* boolean instead of number on set DO ([6601131](https://github.com/Iniationware/CC100-Node-Red/commit/6601131ed8c02410856130481c28c00e541de610))
 
 
 

@@ -152,8 +152,24 @@ module.exports = {
             const valueNumber = coreAnalogInternal.calculateVoltage(Number(ioBufferData2))
             msgPort02.payload = valueNumber.toFixed(2)
 
+            const msgKeyValues = {
+              payload: {
+                'A-OUT-1': msgPort01.payload,
+                'A-OUT-2': msgPort02.payload
+              },
+              topic: 'AnalogOutputs'
+            }
+
+            const msgPortValues = {
+              payload: [
+                msgPort01.payload,
+                msgPort02.payload
+              ],
+              topic: 'AnalogOutputValues'
+            }
+
             node.status({ fill: 'green', shape: 'ring', text: 'OK' })
-            return node.send([msgPort01, msgPort02])
+            return node.send([msgPort01, msgPort02, msgKeyValues, msgPortValues])
           }
         })
       }

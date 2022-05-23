@@ -65,7 +65,7 @@
       name: { value: '' }
     },
     inputs: 1,
-    outputs: 2,
+    outputs: 4,
     icon: 'feed.svg',
     label: function () {
       return this.name || 'Read-AO'
@@ -84,9 +84,10 @@
     <p>Node to read all Analog Output values on CC100 PLC</p>
 
     <ul>
-        <li>Output 1-2 : AO 1-2
-        <li>Output 2: All AO's as JSON object with named key:value
-        <li>Output 6: Array from the DO values 1-4
+        <li>Output 1: AO 1
+        <li>Output 2: AO 2
+        <li>Output 3: All AO's as JSON object with named key:value
+        <li>Output 4: Array from the DO values 1-4
     </ul>
 </script>
 <!-- Read Analog Out -->
