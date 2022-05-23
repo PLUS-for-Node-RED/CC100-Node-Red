@@ -13,7 +13,13 @@ module.exports = function (RED) {
     const node = this
 
     node.on('input', function (msg) {
-      coreDigital.writeDigitalOutput(node, msg, DigOutPID, 'DigOutPID', do1)
+      const ioWriteStructure = {
+        ioPath: DigOutPID,
+        ioName: 'DO01',
+        ioValue: do1
+      }
+
+      coreDigital.writeDigitalOutput(node, msg, ioWriteStructure)
     })
   }
 
@@ -25,7 +31,13 @@ module.exports = function (RED) {
     const node = this
 
     node.on('input', function (msg) {
-      coreDigital.writeDigitalOutput(node, msg, DigOutPID, 'DigOutPID', do2)
+      const ioWriteStructure = {
+        ioPath: DigOutPID,
+        ioName: 'DO02',
+        ioValue: do2
+      }
+
+      coreDigital.writeDigitalOutput(node, msg, ioWriteStructure)
     })
   }
 
@@ -37,7 +49,13 @@ module.exports = function (RED) {
     const node = this
 
     node.on('input', function (msg) {
-      coreDigital.writeDigitalOutput(node, msg, DigOutPID, 'DigOutPID', do3)
+      const ioWriteStructure = {
+        ioPath: DigOutPID,
+        ioName: 'DO03',
+        ioValue: do3
+      }
+
+      coreDigital.writeDigitalOutput(node, msg, ioWriteStructure)
     })
   }
 
@@ -49,7 +67,13 @@ module.exports = function (RED) {
     const node = this
 
     node.on('input', function (msg) {
-      coreDigital.writeDigitalOutput(node, msg, DigOutPID, 'DigOutPID', do4)
+      const ioWriteStructure = {
+        ioPath: DigOutPID,
+        ioName: 'DO04',
+        ioValue: do4
+      }
+
+      coreDigital.writeDigitalOutput(node, msg, ioWriteStructure)
     })
   }
 

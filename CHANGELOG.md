@@ -1,4 +1,13 @@
+## [0.1.3](https://github.com/Iniationware/CC100-Node-Red/compare/v0.1.1...v0.1.3) (2022-05-23)
+
+
+
 ## [0.1.1](https://github.com/Iniationware/CC100-Node-Red/compare/v0.1.0...v0.1.1) (2022-05-23)
+
+
+### Features
+
+* status ring on analog reads ([a7ee1f9](https://github.com/Iniationware/CC100-Node-Red/commit/a7ee1f94ef5fdf90047b3f1a07d905d6ca0eed53))
 
 
 

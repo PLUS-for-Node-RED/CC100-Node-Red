@@ -170,55 +170,58 @@ module.exports = {
     })
   },
 
-  getDigitalValueFromInput (msgValue, data, digitalValue) {
+  getDigitalValueFromInput (msgValue, ioBufferData, digitalValue) {
     // TODO: check here if all is correct after refactor, please
-    const value = Number(data)
+    const value = Number(ioBufferData)
 
-    if (msgValue === true & ((value & digitalValue) !== digitalValue)) {
-      return (value + digitalValue)
-    } else if (msgValue === false & ((value & digitalValue) === digitalValue)) {
-      return (value - digitalValue)
+    if (msgValue === true && ((value & digitalValue) !== digitalValue)) {
+      return (value + digitalValue) // switch on
+    } else if (msgValue === false && ((value & digitalValue) === digitalValue)) {
+      return (value - digitalValue) // switch off
     }
 
-    return value
+    return value // value still the same
   },
 
-  writeDigitalOutput (node, msg, ioToWrite, ioName, digitalValue) {
+  writeDigitalOutput (node, msg, ioWriteStructure) {
     const coreDigitalInternal = this
 
     if (coreDigitalInternal.lockReadWrite === false) {
       coreDigitalInternal.lockReadWrite = true
 
       // Read the state of the Output from file
-      fs.readFile(ioToWrite, function (err, data) {
+      fs.readFile(ioWriteStructure.ioPath, function (err, ioBufferData) {
         if (err) {
-          node.error(err, 'Error while reading ' + ioName)
+          node.error(err, 'Error while reading ' + ioWriteStructure.ioName)
           node.status({ fill: 'red', shape: 'ring', text: 'Failed' })
+
           return console.log(err)
         } else {
           // Write the Digital Output (value) if needed
-          const value = coreDigitalInternal.getDigitalValueFromInput(msg.payload, data, digitalValue)
+          const value = coreDigitalInternal.getDigitalValueFromInput(msg.payload, ioBufferData, ioWriteStructure.ioValue)
 
           // Write the Digital Output to file
-          fs.writeFile(ioToWrite, String(value), function (err) {
+          fs.writeFile(ioWriteStructure.ioPath, String(value), function (err) {
             if (err) {
-              node.error(err, 'Error while writing ' + ioName)
+              node.error(err, 'Error while writing ' + ioWriteStructure.ioName)
               node.status({ fill: 'red', shape: 'ring', text: 'Failed' })
 
               return console.log(err)
             } else {
-              // TODO: really reuse of the incoming msg object
-              msg.payload = msg.payload & (value & digitalValue) // TODO: is that to combine with msg.payload? maybe value & digitalValue is enough
               coreDigitalInternal.lockReadWrite = false
               node.status({ fill: 'green', shape: 'ring', text: 'OK' })
 
+              const msg = {
+                payload: (value & ioWriteStructure.ioValue) > 0,
+                topic: ioWriteStructure.ioName
+              }
               return node.send(msg)
             }
           })
         }
       })
     } else {
-      node.warn(ioName + ' read-write lock on operation')
+      node.warn(ioWriteStructure.ioPath + ' on ' + ioWriteStructure.ioName + ' read-write lock on operation')
       node.status({ fill: 'yellow', shape: 'ring', text: 'Blocked' })
     }
   }
