@@ -8,7 +8,7 @@ const assert = require('chai').assert
 
 describe('Analog', function () {
 
-  describe('analog core input functions', function () {
+  describe('analog core functions', function () {
     it('should have value check message with min and max', function (done) {
       assert.equal(coreDigital.isNotValidMessage(), 'Value not allowed, has to be >= 0 and <= 10')
       done()
@@ -27,6 +27,21 @@ describe('Analog', function () {
     })
     it('should have value 335 on calculate voltage raw 1', function (done) {
       assert.equal(coreDigital.calculateVoltageRaw(1), 335.00)
+      done()
+    })
+  })
+
+  describe('analog core input functions', function () {
+    it('should have value check message with min and max', function (done) {
+      assert.equal(coreDigital.isNotValidMessage(), 'Value not allowed, has to be >= 0 and <= 10')
+      done()
+    })
+  })
+
+  describe('analog core output functions', function () {
+    it('should have value 1 on built analog output message for voltage 335', function (done) {
+      const msg = coreDigital.buildAnalogOutputReadMessage(335)
+      assert.equal(msg.payload, 1.00)
       done()
     })
   })

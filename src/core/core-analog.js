@@ -61,6 +61,7 @@ module.exports = {
       if (err) {
         node.error(err, 'Error while writing ' + ioWriteStructure.ioPowerDown.ioName)
         node.status({ fill: 'red', shape: 'ring', text: 'Failed' })
+
         return console.log(err)
       } else {
         // Write the Analog Output Raw
@@ -68,9 +69,11 @@ module.exports = {
           if (err) {
             node.error(err, 'Error while writing ' + ioWriteStructure.ioRaw.ioName)
             node.status({ fill: 'red', shape: 'ring', text: 'Failed' })
+
             return console.log(err)
           } else {
             node.status({ fill: 'green', shape: 'ring', text: 'OK' })
+
             return node.send(msg)
           }
         })
@@ -87,10 +90,15 @@ module.exports = {
       ioWriteStructure.ioRaw.ioValue = coreAnalogInternal.calculateVoltageRaw(voltage)
       coreAnalogInternal.writeAnalogOutput(node, msg, ioWriteStructure)
     } else {
-      if (this.verboseMode) {
-        console.log(coreAnalogInternal.isNotValidMessage())
-      }
+      node.warn(coreAnalogInternal.isNotValidMessage())
       node.status({ fill: 'red', shape: 'ring', text: 'Failed' })
+    }
+  },
+
+  buildAnalogOutputReadMessage (ioBufferData) {
+    const valueNumber = this.calculateVoltage(Number(ioBufferData))
+    return {
+      payload: valueNumber.toFixed(2)
     }
   },
 
@@ -104,13 +112,9 @@ module.exports = {
 
         return console.log(err)
       } else {
-        const valueNumber = coreAnalogInternal.calculateVoltage(Number(ioBufferData))
-        const msg = {
-          payload: valueNumber.toFixed(2)
-        }
-
         node.status({ fill: 'green', shape: 'ring', text: 'OK' })
-        return node.send(msg)
+
+        return node.send(coreAnalogInternal.buildAnalogOutputReadMessage(ioBufferData))
       }
     })
   },
