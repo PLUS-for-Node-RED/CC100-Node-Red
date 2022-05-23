@@ -36,12 +36,27 @@ describe('Analog', function () {
       assert.equal(coreDigital.isNotValidMessage(), 'Value not allowed, has to be >= 0 and <= 10')
       done()
     })
+    it('should have value 1 on built analog output message for value range 5600', function (done) {
+      const msg = coreDigital.buildAnalogInputReadMessage(5600)
+      assert.equal(msg.payload, 1.00)
+      done()
+    })
+    it('should have topic input IO name', function (done) {
+      const msg = coreDigital.buildAnalogInputReadMessage(5600, 'AI1PID')
+      assert.equal(msg.topic, 'AI1PID')
+      done()
+    })
   })
 
   describe('analog core output functions', function () {
     it('should have value 1 on built analog output message for voltage 335', function (done) {
       const msg = coreDigital.buildAnalogOutputReadMessage(335)
       assert.equal(msg.payload, 1.00)
+      done()
+    })
+    it('should have topic output IO name', function (done) {
+      const msg = coreDigital.buildAnalogOutputReadMessage(335, 'AO1PID')
+      assert.equal(msg.topic, 'AO1PID')
       done()
     })
   })

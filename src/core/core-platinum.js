@@ -49,6 +49,7 @@ module.exports = {
         return console.log(err)
       } else {
         const calculatedValue = corePlatinumInternal.calculatePlatinumValue(ioBufferData)
+        // TODO: really reuse of the incoming msg object
         msg.payload = calculatedValue.toFixed(1)
 
         node.status({ fill: 'green', shape: 'ring', text: 'OK' })

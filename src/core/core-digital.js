@@ -63,14 +63,14 @@ module.exports = {
   },
 
   buildInputMessagesToSend (values) {
-    const msg1 = { payload: ((values & di1) === di1) }
-    const msg2 = { payload: ((values & di2) === di2) }
-    const msg3 = { payload: ((values & di3) === di3) }
-    const msg4 = { payload: ((values & di4) === di4) }
-    const msg5 = { payload: ((values & di5) === di5) }
-    const msg6 = { payload: ((values & di6) === di6) }
-    const msg7 = { payload: ((values & di7) === di7) }
-    const msg8 = { payload: ((values & di8) === di8) }
+    const msg1 = { payload: ((values & di1) === di1), topic: 'DigitalInput1' }
+    const msg2 = { payload: ((values & di2) === di2), topic: 'DigitalInput2' }
+    const msg3 = { payload: ((values & di3) === di3), topic: 'DigitalInput3' }
+    const msg4 = { payload: ((values & di4) === di4), topic: 'DigitalInput4' }
+    const msg5 = { payload: ((values & di5) === di5), topic: 'DigitalInput5' }
+    const msg6 = { payload: ((values & di6) === di6), topic: 'DigitalInput6' }
+    const msg7 = { payload: ((values & di7) === di7), topic: 'DigitalInput7' }
+    const msg8 = { payload: ((values & di8) === di8), topic: 'DigitalInput8' }
 
     const msg9 = {
       payload: {
@@ -82,7 +82,8 @@ module.exports = {
         'Dig-IN-6': ((values & di6) === di6),
         'Dig-IN-7': ((values & di7) === di7),
         'Dig-IN-8': ((values & di8) === di8)
-      }
+      },
+      topic: 'DigitalInputs'
     }
 
     const msg10 = {
@@ -95,7 +96,8 @@ module.exports = {
         ((values & di6) === di6),
         ((values & di7) === di7),
         ((values & di8) === di8)
-      ]
+      ],
+      topic: 'DigitalInputValues'
     }
 
     return [msg1, msg2, msg3, msg4, msg5, msg6, msg7, msg8, msg9, msg10]
@@ -121,10 +123,10 @@ module.exports = {
   },
 
   buildOutputMessagesToSend (values) {
-    const msg1 = { payload: ((values & do1) === do1) }
-    const msg2 = { payload: ((values & do2) === do2) }
-    const msg3 = { payload: ((values & do3) === do3) }
-    const msg4 = { payload: ((values & do4) === do4) }
+    const msg1 = { payload: ((values & do1) === do1), topic: 'DigitalOutput1' }
+    const msg2 = { payload: ((values & do2) === do2), topic: 'DigitalOutput2' }
+    const msg3 = { payload: ((values & do3) === do3), topic: 'DigitalOutput3' }
+    const msg4 = { payload: ((values & do4) === do4), topic: 'DigitalOutput4' }
 
     const msg5 = {
       payload: {
@@ -132,7 +134,8 @@ module.exports = {
         'Dig-OUT-2': ((values & do2) === do2),
         'Dig-OUT-3': ((values & do3) === do3),
         'Dig-OUT-4': ((values & do4) === do4)
-      }
+      },
+      topic: 'DigitalOutputs'
     }
 
     const msg6 = {
@@ -141,7 +144,8 @@ module.exports = {
         ((values & do2) === do2),
         ((values & do3) === do3),
         ((values & do4) === do4)
-      ]
+      ],
+      topic: 'DigitalOutputValues'
     }
 
     return [msg1, msg2, msg3, msg4, msg5, msg6]
@@ -203,6 +207,7 @@ module.exports = {
 
               return console.log(err)
             } else {
+              // TODO: really reuse of the incoming msg object
               msg.payload = msg.payload & (value & digitalValue) // TODO: is that to combine with msg.payload? maybe value & digitalValue is enough
               coreDigitalInternal.lockReadWrite = false
               node.status({ fill: 'green', shape: 'ring', text: 'OK' })

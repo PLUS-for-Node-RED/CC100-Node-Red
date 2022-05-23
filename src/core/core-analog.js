@@ -19,10 +19,18 @@ module.exports = {
       ' and <= ' + ANALOG_INPUT_MAX_VOLTAGE_VALUE
   },
 
-  getNumberFromAnalogData (data) {
+  getNumberFromAnalogData (data) { // TODO: better describing name?
     const numberData = Number(data)
     const calculatedNumber = Math.round(numberData / 560) / 10.0 // TODO: name values what it is: factor or a better naming?
     return Number(calculatedNumber.toFixed(2))
+  },
+
+  buildAnalogInputReadMessage (ioBufferData, ioName) {
+    const valueNumber = this.getNumberFromAnalogData(ioBufferData)
+    return {
+      payload: valueNumber,
+      topic: ioName
+    }
   },
 
   readAnalogInput (node, ioToRead, ioName) {
@@ -35,12 +43,9 @@ module.exports = {
 
         return console.log(err)
       } else {
-        const msg = {
-          payload: coreAnalogInternal.getNumberFromAnalogData(ioBufferData)
-        }
-
         node.status({ fill: 'green', shape: 'ring', text: 'OK' })
-        return node.send(msg)
+
+        return node.send(coreAnalogInternal.buildAnalogInputReadMessage(ioBufferData, ioName))
       }
     })
   },
@@ -74,6 +79,7 @@ module.exports = {
           } else {
             node.status({ fill: 'green', shape: 'ring', text: 'OK' })
 
+            // TODO: really sending of the incoming msg object
             return node.send(msg)
           }
         })
@@ -95,10 +101,11 @@ module.exports = {
     }
   },
 
-  buildAnalogOutputReadMessage (ioBufferData) {
+  buildAnalogOutputReadMessage (ioBufferData, ioName) {
     const valueNumber = this.calculateVoltage(Number(ioBufferData))
     return {
-      payload: valueNumber.toFixed(2)
+      payload: valueNumber.toFixed(2),
+      topic: ioName
     }
   },
 
@@ -114,7 +121,7 @@ module.exports = {
       } else {
         node.status({ fill: 'green', shape: 'ring', text: 'OK' })
 
-        return node.send(coreAnalogInternal.buildAnalogOutputReadMessage(ioBufferData))
+        return node.send(coreAnalogInternal.buildAnalogOutputReadMessage(ioBufferData, ioName))
       }
     })
   },
