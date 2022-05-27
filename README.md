@@ -54,7 +54,7 @@ with privileged mode if you do not use the provisioning-tool
 
     docker run -d --name wago-node-red \
     -d --privileged=true --user=root \
-    -p 1880:1880 \
+    --network=host \
     -v node_red_user_data:/data \
     nodered/node-red
 
@@ -66,8 +66,7 @@ Portainer is possible but needs more than 200 MB of space.
 if you want to use that space for other containers.
 
 	docker run -d --name=portainer \
-	-p 8000:8000 \
-	-p 9000:9000 \
+	--network=host \
 	--restart=always \
 	--pull=always \
 	-v /var/run/docker.sock:/var/run/docker.sock \
