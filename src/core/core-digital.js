@@ -1,3 +1,11 @@
+/*
+ The MIT License
+
+ Copyright (c) 2022 - Klaus Landsdorf (http://node-red.plus/)
+ All rights reserved.
+ @node-red-plus/node-red-contrib-wago-cc100
+ */
+
 const fs = require('fs')
 
 const di1 = 1

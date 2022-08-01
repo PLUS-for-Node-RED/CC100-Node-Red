@@ -1,24 +1,23 @@
 {
-  "name": "node-red-contrib-wago-cc100",
+  "name": "@node-red-plus/node-red-contrib-wago-cc100",
+  "description": "A WAGO CC100 contribution package for Node-RED.",
+  "version": "0.1.4",
   "node-red": {
+    "version": ">=2",
     "nodes": {
       "Digital-Outputs": "cc100/DigOut.js",
       "Digital-Inputs": "cc100/DigIn.js",
       "Analog-Outputs": "cc100/AO.js",
       "Analog-Inputs": "cc100/AI.js",
       "PT1000": "cc100/PT.js"
-    },
-    "version": ">=2.0.0"
+    }
   },
-  "version": "0.1.4",
-  "description": "A WAGO CC100 contribution package for Node-RED. It gives you access to the IO's of the CC100.",
   "main": "node",
   "files": [
     "docs",
     "examples",
     "cc100"
   ],
-  "author": "Helmut.Saal@wago.com",
   "license": "MIT",
   "scripts": {
     "changelog": "npm run rewrite-changelog",
@@ -33,6 +32,7 @@
     "dev-link": "npm i && npm run build && npm link && cd ~/.node-red && npm link node-red-contrib-wago-cc100",
     "dev-unlink": "npm unlink --no-save node-red-contrib-wago-cc100"
   },
+  "author": "Iniationware <github@iniationware.com>",
   "contributors": [
     {
       "name": "Helmut Saal"
@@ -53,11 +53,13 @@
   "keywords": [
     "node-red",
     "wago",
-    "CC100"
+    "CC100",
+    "automation",
+    "biancoroyal"
   ],
-  "homepage": "https://github.com/Helmut-Saal/CC100-Node-Red",
+  "homepage": "https://github.com/Iniationware/CC100-Node-Red",
   "bugs": {
-    "url": "https://github.com/Helmut-Saal/CC100-Node-Red/issues/"
+    "url": "https://github.com/Iniationware/CC100-Node-Red/issues/"
   },
   "engines": {
     "node": ">=12"
@@ -67,9 +69,10 @@
     "test": "test"
   },
   "devDependencies": {
-    "@babel/cli": "^7.17.6",
-    "@babel/core": "^7.17.9",
-    "@babel/preset-env": "^7.16.11",
+    "@babel/cli": "^7.18.9",
+    "@babel/core": "^7.18.9",
+    "@babel/preset-env": "^7.18.9",
+    "@node-red/nodes": "^3.0.1",
     "chai": "^4.3.6",
     "conventional-changelog-cli": "^2.2.2",
     "gulp": "^4.0.2",
@@ -84,8 +87,12 @@
     "istanbul": "^0.4.5",
     "js-beautify": "^1.14.3",
     "mocha": "^9.2.2",
+    "node-red": "^3.0.1",
+    "node-red-node-test-helper": "^0.3.0",
+    "pump": "^3.0.0",
     "standard": "^17.0.0",
-    "standard-version": "^9.3.2"
+    "standard-version": "^9.3.2",
+    "uglify-js": "^3.16.2"
   },
   "standard": {
     "ignore": [
