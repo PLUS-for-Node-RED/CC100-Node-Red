@@ -1,5 +1,5 @@
 {
-  "name": "@node-red-plus/node-red-contrib-wago-cc100",
+  "name": "@plus4nodered/node-red-contrib-wago-cc100",
   "description": "A WAGO CC100 contribution package for Node-RED.",
   "version": "0.1.4",
   "private": false,
