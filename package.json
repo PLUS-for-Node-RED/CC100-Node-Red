@@ -1,7 +1,7 @@
 {
   "name": "@plus4nodered/node-red-contrib-wago-cc100",
   "description": "A WAGO CC100 contribution package for Node-RED.",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": false,
   "node-red": {
     "version": ">=2",
@@ -33,7 +33,7 @@
     "dev-link": "npm i && npm run build && npm link && cd ~/.node-red && npm link node-red-contrib-wago-cc100",
     "dev-unlink": "npm unlink --no-save node-red-contrib-wago-cc100"
   },
-  "author": "Iniationware <github@iniationware.com>",
+  "author": "P4NR Team <github@plus4nodered.com>",
   "contributors": [
     {
       "name": "Helmut Saal"
