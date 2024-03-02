@@ -1,10 +1,9 @@
-![Platform Node-RED](https://img.shields.io/badge/Platform-Node--RED--PLUS-red.png)
-![Contribution WAGO-CC100](http://b.repl.ca/v1/Contribution-WAGO--CC100-green.png)
-![License](https://img.shields.io/badge/License-MIT-orange.png)
-[![NPM version](https://badge.fury.io/js/@plus4nodered/node-red-contrib-wago-cc100.png)](https://www.npmjs.com/package/@plus4nodered/node-red-contrib-wago-cc100)
+![Platform Node-RED](https://img.shields.io/badge/Platform-Node--RED-red.png)
+![Contribution WAGO-CC100](https://img.shields.io/badge/Contribution-WAGO--CC100-green.png)
+![License](https://img.shields.io/badge/License-MIT-blue.png)
 [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
-[![NPM download](https://img.shields.io/npm/dm/@plus4nodered/node-red-contrib-wago-cc100.svg)](https://npm-stat.com/charts.html?package=@plus4nodered/node-red-contrib-wago-cc100)
-[![Repository GitHub](http://b.repl.ca/v1/Repository-GitHub-orange.png)](https://github.com/Iniationware/CC100-Node-Red)
+[![NPM download](https://img.shields.io/badge/@plus4nodered-WAGO--CC100-green.png)](https://npm-stat.com/charts.html?package=@plus4nodered/node-red-contrib-wago-cc100)
+[![Repository GitHub](https://img.shields.io/badge/Repository-GitHub-orange.png)](https://github.com/Iniationware/CC100-Node-Red)
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Iniationware/CC100-Node-Red)
 
 # WAGO CC100 Node-RED Contribution Package
