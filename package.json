@@ -1,7 +1,7 @@
 {
   "name": "@plus4nodered/node-red-contrib-wago-cc100",
   "description": "A WAGO CC100 contribution package for Node-RED.",
-  "version": "0.1.5",
+  "version": "1.0.0",
   "private": false,
   "node-red": {
     "version": ">=2",
@@ -53,14 +53,14 @@
   ],
   "keywords": [
     "node-red",
+    "plus4nodered",
     "wago",
     "CC100",
-    "automation",
-    "biancoroyal"
+    "automation"
   ],
-  "homepage": "https://github.com/Iniationware/CC100-Node-Red",
+  "homepage": "https://www.npmjs.com/package/@plus4nodered/node-red-contrib-wago-cc100",
   "bugs": {
-    "url": "https://github.com/Iniationware/CC100-Node-Red/issues/"
+    "url": "https://github.com/PLUS-for-Node-RED/node-red-contrib-wago-cc100.git"
   },
   "engines": {
     "node": ">=12"
