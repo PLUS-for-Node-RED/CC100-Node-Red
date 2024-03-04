@@ -1,7 +1,7 @@
 {
   "name": "@plus4nodered/node-red-contrib-wago-cc100",
   "description": "A WAGO CC100 contribution package for Node-RED.",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "private": false,
   "node-red": {
     "version": ">=3",
@@ -67,7 +67,7 @@
     "url": "https://github.com/PLUS-for-Node-RED/node-red-contrib-wago-cc100.git"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=14"
   },
   "directories": {
     "example": "examples",
