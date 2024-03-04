@@ -604,7 +604,7 @@
     },
     {
         "id": "4b66344519d25a5f",
-        "type": "Set-DO1",
+        "type": "CC100-Set-DO1",
         "z": "cf11c07bb539e1de",
         "name": "",
         "x": 380,
@@ -617,7 +617,7 @@
     },
     {
         "id": "94990cb08c2b1059",
-        "type": "Set-DO2",
+        "type": "CC100-Set-DO2",
         "z": "cf11c07bb539e1de",
         "name": "",
         "x": 380,
@@ -630,7 +630,7 @@
     },
     {
         "id": "51035f507adec93c",
-        "type": "Set-DO3",
+        "type": "CC100-Set-DO3",
         "z": "cf11c07bb539e1de",
         "name": "",
         "x": 380,
@@ -643,7 +643,7 @@
     },
     {
         "id": "3efc56297febfbfd",
-        "type": "Set-DO4",
+        "type": "CC100-Set-DO4",
         "z": "cf11c07bb539e1de",
         "name": "",
         "x": 380,
@@ -656,7 +656,7 @@
     },
     {
         "id": "ebe29a3cf66c0f09",
-        "type": "Read-DO",
+        "type": "CC100-Read-DO",
         "z": "cf11c07bb539e1de",
         "name": "",
         "x": 380,
@@ -681,7 +681,7 @@
     },
     {
         "id": "855a132412ccb112",
-        "type": "Read-DI",
+        "type": "CC100-Read-DI",
         "z": "cf11c07bb539e1de",
         "name": "",
         "x": 380,
@@ -822,7 +822,7 @@
     },
     {
         "id": "344fc97616444c77",
-        "type": "Set-AO1",
+        "type": "CC100-Set-AO1",
         "z": "cf11c07bb539e1de",
         "name": "",
         "x": 400,
@@ -1055,7 +1055,7 @@
     },
     {
         "id": "3916b040b2c8b693",
-        "type": "Set-AO2",
+        "type": "CC100-Set-AO2",
         "z": "cf11c07bb539e1de",
         "name": "",
         "x": 400,
@@ -1131,7 +1131,7 @@
     },
     {
         "id": "a097059fdbc4dee0",
-        "type": "Read-AI1",
+        "type": "CC100-Read-AI1",
         "z": "cf11c07bb539e1de",
         "name": "",
         "x": 400,
@@ -1144,7 +1144,7 @@
     },
     {
         "id": "47041e95a1d98510",
-        "type": "Read-AI2",
+        "type": "CC100-Read-AI2",
         "z": "cf11c07bb539e1de",
         "name": "",
         "x": 400,
@@ -1186,7 +1186,7 @@
     },
     {
         "id": "3f405a6ff3590b74",
-        "type": "Read-PT1",
+        "type": "CC100-Read-PT1",
         "z": "cf11c07bb539e1de",
         "name": "",
         "x": 410,
@@ -1199,7 +1199,7 @@
     },
     {
         "id": "1f99b64337711927",
-        "type": "Read-PT2",
+        "type": "CC100-Read-PT2",
         "z": "cf11c07bb539e1de",
         "name": "",
         "x": 410,
@@ -1350,7 +1350,7 @@
     },
     {
         "id": "1670eeaaef5a4d5b",
-        "type": "Read-AO",
+        "type": "CC100-Read-AO",
         "z": "cf11c07bb539e1de",
         "name": "",
         "x": 400,

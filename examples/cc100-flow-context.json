@@ -172,7 +172,7 @@
   },
   {
     "id": "8bccaac79fef006c",
-    "type": "Read-DO",
+    "type": "CC100-Read-DO",
     "z": "f6f2187d.f17ca8",
     "name": "",
     "x": 460,
@@ -197,7 +197,7 @@
   },
   {
     "id": "9f317c059ac8c031",
-    "type": "Read-DI",
+    "type": "CC100-Read-DI",
     "z": "f6f2187d.f17ca8",
     "name": "",
     "x": 460,
@@ -234,7 +234,7 @@
   },
   {
     "id": "0a933220d814cd58",
-    "type": "Read-AO",
+    "type": "CC100-Read-AO",
     "z": "f6f2187d.f17ca8",
     "name": "",
     "x": 460,
@@ -682,7 +682,7 @@
   },
   {
     "id": "8d1aa23d40ec681d",
-    "type": "Read-PT1",
+    "type": "CC100-Read-PT1",
     "z": "f6f2187d.f17ca8",
     "name": "",
     "x": 440,
@@ -695,7 +695,7 @@
   },
   {
     "id": "ccf07d3384fc2432",
-    "type": "Read-PT2",
+    "type": "CC100-Read-PT2",
     "z": "f6f2187d.f17ca8",
     "name": "",
     "x": 440,

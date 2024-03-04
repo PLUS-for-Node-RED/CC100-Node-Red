@@ -1,65 +1,71 @@
 <!--
     The MIT License
 
-    Copyright (c) 2022 - Klaus Landsdorf (http://node-red.plus/)
+    Copyright (c) 2022-2024 - Iniationware GmbH (https://plus4nodered.com/)
+    Copyright (c) 2022 - Klaus Landsdorf (https://bianco-royal.com/)
     All rights reserved.
-    @node-red-plus/node-red-contrib-wago-cc100
+    @plus4nodered/node-red-contrib-wago-cc100
 -->
 
 <!-- Analog IN 1 -->
 <script type="text/javascript">
-  RED.nodes.registerType('Read-AI1', {
+  RED.nodes.registerType('CC100-Read-AI1', {
     category: 'WAGO CC100',
-    color: '#00FF00',
+    color: 'rgba(86,227,168,0.65)',
     defaults: {
       name: { value: '' }
     },
     inputs: 1,
     outputs: 1,
-    icon: 'feed.svg',
+    icon: 'status.svg',
+    align: "left",
     label: function () {
-      return this.name || 'Read-AI1'
+      return this.name || 'CC100 Read-AI1'
     }
   })
 </script>
 
-<script type="text/html" data-template-name="Read-AI1">
+<script type="text/html" data-template-name="CC100-Read-AI1">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
 </script>
 
-<script type="text/html" data-help-name="Read-AI1">
+<script type="text/html" data-help-name="CC100-Read-AI1">
     <p>Node read Analog Input 1 on CC100 PLC</p>
+    <p>last Test on 9301 FIRMWARE=04.03.03(25)</p>
 </script>
 <!-- Analog In 1 -->
 
 <!-- Analog In 2 -->
 <script type="text/javascript">
-  RED.nodes.registerType('Read-AI2', {
+  RED.nodes.registerType('CC100-Read-AI2', {
     category: 'WAGO CC100',
-    color: '#00FF00',
+    color: 'rgba(86,227,168,0.65)',
     defaults: {
       name: { value: '' }
     },
     inputs: 1,
     outputs: 1,
-    icon: 'feed.svg',
+    icon: 'status.svg',
+    align: "left",
     label: function () {
-      return this.name || 'Read-AI2'
+      return this.name || 'CC100 Read-AI2'
     }
   })
 </script>
 
-<script type="text/html" data-template-name="Read-AI2">
+<script type="text/html" data-template-name="CC100-Read-AI2">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
 </script>
 
-<script type="text/html" data-help-name="Read-AI2">
+<script type="text/html" data-help-name="CC100-Read-AI2">
     <p>Node read Analog Input 2 on CC100 PLC</p>
+    <p>0 … +10 V, 16 Bit</p>
+    <p>last Test on 9301 FIRMWARE=04.03.03(25)</p>
 </script>
 <!-- Analog In 2 -->

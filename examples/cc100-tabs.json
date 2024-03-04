@@ -86,7 +86,7 @@
   },
   {
     "id": "8d1aa23d40ec681d",
-    "type": "Read-PT1",
+    "type": "CC100-Read-PT1",
     "z": "f6f2187d.f17ca8",
     "name": "",
     "x": 420,
@@ -99,7 +99,7 @@
   },
   {
     "id": "ccf07d3384fc2432",
-    "type": "Read-PT2",
+    "type": "CC100-Read-PT2",
     "z": "f6f2187d.f17ca8",
     "name": "",
     "x": 420,
@@ -217,7 +217,7 @@
   },
   {
     "id": "8614969b25197060",
-    "type": "Read-AI1",
+    "type": "CC100-Read-AI1",
     "z": "f6f2187d.f17ca8",
     "name": "",
     "x": 420,
@@ -230,7 +230,7 @@
   },
   {
     "id": "7697caa99f5b31ee",
-    "type": "Read-AI2",
+    "type": "CC100-Read-AI2",
     "z": "f6f2187d.f17ca8",
     "name": "",
     "x": 420,
@@ -493,7 +493,7 @@
   },
   {
     "id": "792d3a47ca0afb63",
-    "type": "Read-AO",
+    "type": "CC100-Read-AO",
     "z": "f6f2187d.f17ca8",
     "name": "",
     "x": 420,
@@ -635,7 +635,7 @@
   },
   {
     "id": "b58bb04fccfe80d8",
-    "type": "Set-DO1",
+    "type": "CC100-Set-DO1",
     "z": "48de8d17080562aa",
     "name": "",
     "x": 340,
@@ -798,7 +798,7 @@
   },
   {
     "id": "6fc15b0f696e7fb8",
-    "type": "Set-DO2",
+    "type": "CC100-Set-DO2",
     "z": "48de8d17080562aa",
     "name": "",
     "x": 340,
@@ -811,7 +811,7 @@
   },
   {
     "id": "f38cc986d01f7e11",
-    "type": "Set-DO3",
+    "type": "CC100-Set-DO3",
     "z": "48de8d17080562aa",
     "name": "",
     "x": 340,
@@ -882,7 +882,7 @@
   },
   {
     "id": "18206af9f6da63a7",
-    "type": "Set-DO4",
+    "type": "CC100-Set-DO4",
     "z": "48de8d17080562aa",
     "name": "",
     "x": 340,
@@ -1019,7 +1019,7 @@
   },
   {
     "id": "6909a393acee223a",
-    "type": "Set-AO1",
+    "type": "CC100-Set-AO1",
     "z": "48de8d17080562aa",
     "name": "",
     "x": 900,
@@ -1032,7 +1032,7 @@
   },
   {
     "id": "057b01e31545228c",
-    "type": "Set-AO2",
+    "type": "CC100-Set-AO2",
     "z": "48de8d17080562aa",
     "name": "",
     "x": 900,
@@ -1311,7 +1311,7 @@
   },
   {
     "id": "31bf915b820c660b",
-    "type": "Read-DO",
+    "type": "CC100-Read-DO",
     "z": "9f40dc185061ff47",
     "name": "",
     "x": 360,
@@ -1693,7 +1693,7 @@
   },
   {
     "id": "525760ec13c21489",
-    "type": "Read-DI",
+    "type": "CC100-Read-DI",
     "z": "36bbd6a919e332d4",
     "name": "",
     "x": 360,

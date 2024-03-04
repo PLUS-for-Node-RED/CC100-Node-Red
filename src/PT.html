@@ -1,65 +1,70 @@
 <!--
     The MIT License
 
-    Copyright (c) 2022 - Klaus Landsdorf (http://node-red.plus/)
+    Copyright (c) 2022-2024 - Iniationware GmbH (https://plus4nodered.com/)
+    Copyright (c) 2022 - Klaus Landsdorf (https://bianco-royal.com/)
     All rights reserved.
-    @node-red-plus/node-red-contrib-wago-cc100
+    @plus4nodered/node-red-contrib-wago-cc100
 -->
 
 <!-- Analog PT 1 -->
 <script type="text/javascript">
-  RED.nodes.registerType('Read-PT1', {
+  RED.nodes.registerType('CC100-Read-PT1', {
     category: 'WAGO CC100',
-    color: '#00FF00',
+    color: 'rgba(152,74,204,0.65)',
     defaults: {
       name: { value: '' }
     },
     inputs: 1,
     outputs: 1,
-    icon: 'feed.svg',
+    icon: 'status.svg',
+    align: "left",
     label: function () {
-      return this.name || 'Read-PT1'
+      return this.name || 'CC100 Read-PT1'
     }
   })
 </script>
 
-<script type="text/html" data-template-name="Read-PT1">
+<script type="text/html" data-template-name="CC100-Read-PT1">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
 </script>
 
-<script type="text/html" data-help-name="Read-PT1">
+<script type="text/html" data-help-name="CC100-Read-PT1">
     <p>Node read PT1000 Input 1 on CC100 PLC</p>
+    <p>last Test on 9301 FIRMWARE=04.03.03(25)</p>
 </script>
 <!-- Analog PT 1 -->
 
 <!-- Analog PT 2 -->
 <script type="text/javascript">
-  RED.nodes.registerType('Read-PT2', {
+  RED.nodes.registerType('CC100-Read-PT2', {
     category: 'WAGO CC100',
-    color: '#00FF00',
+    color: 'rgba(152,74,204,0.65)',
     defaults: {
       name: { value: '' }
     },
     inputs: 1,
     outputs: 1,
-    icon: 'feed.svg',
+    icon: 'status.svg',
+    align: "left",
     label: function () {
-      return this.name || 'Read-PT2'
+      return this.name || 'CC100 Read-PT2'
     }
   })
 </script>
 
-<script type="text/html" data-template-name="Read-PT2">
+<script type="text/html" data-template-name="CC100-Read-PT2">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
 </script>
 
-<script type="text/html" data-help-name="Read-PT2">
-    <p>Node read PT1000 Input 1 on CC100 PLC</p>
+<script type="text/html" data-help-name="CC100-Read-PT2">
+    <p>Node read PT1000 Input 2 on CC100 PLC</p>
+    <p>last Test on 9301 FIRMWARE=04.03.03(25)</p>
 </script>
 <!-- Analog PT 2 -->

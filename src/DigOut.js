@@ -1,9 +1,10 @@
 /*
  The MIT License
 
- Copyright (c) 2022 - Klaus Landsdorf (http://node-red.plus/)
+ Copyright (c) 2022-2024 - Iniationware GmbH (https://plus4nodered.com/)
+ Copyright (c) 2022 - Klaus Landsdorf (https://bianco-royal.com/)
  All rights reserved.
- @node-red-plus/node-red-contrib-wago-cc100
+ @plus4nodered/node-red-contrib-wago-cc100
  */
 
 module.exports = function (RED) {
@@ -31,7 +32,7 @@ module.exports = function (RED) {
     })
   }
 
-  RED.nodes.registerType('Set-DO1', setDO1)
+  RED.nodes.registerType('CC100-Set-DO1', setDO1)
 
   // Set Digital Output 2
   function setDO2 (config) {
@@ -49,7 +50,7 @@ module.exports = function (RED) {
     })
   }
 
-  RED.nodes.registerType('Set-DO2', setDO2)
+  RED.nodes.registerType('CC100-Set-DO2', setDO2)
 
   // Set Digital Output 3
   function setDO3 (config) {
@@ -67,7 +68,7 @@ module.exports = function (RED) {
     })
   }
 
-  RED.nodes.registerType('Set-DO3', setDO3)
+  RED.nodes.registerType('CC100-Set-DO3', setDO3)
 
   // Set Digital Output 4
   function setDO4 (config) {
@@ -85,7 +86,7 @@ module.exports = function (RED) {
     })
   }
 
-  RED.nodes.registerType('Set-DO4', setDO4)
+  RED.nodes.registerType('CC100-Set-DO4', setDO4)
 
   // Read all Digital Outputs at once from file
   function readDO (config) {
@@ -97,5 +98,5 @@ module.exports = function (RED) {
     })
   }
 
-  RED.nodes.registerType('Read-DO', readDO)
+  RED.nodes.registerType('CC100-Read-DO', readDO)
 }

@@ -2,7 +2,10 @@
 
 'use strict'
 
-const assert = require('chai').assert
+let assert = null
+import('chai').then(chai => {
+  assert = chai.assert
+})
 
 describe('Array', function () {
   describe('#indexOf()', function () {

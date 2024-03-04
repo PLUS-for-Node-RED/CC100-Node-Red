@@ -1,9 +1,10 @@
 /*
  The MIT License
 
- Copyright (c) 2022 - Klaus Landsdorf (http://node-red.plus/)
+ Copyright (c) 2022-2024 - Iniationware GmbH (https://plus4nodered.com/)
+ Copyright (c) 2022 - Klaus Landsdorf (https://bianco-royal.com/)
  All rights reserved.
- @node-red-plus/node-red-contrib-wago-cc100
+ @plus4nodered/node-red-contrib-wago-cc100
  */
 
 module.exports = function (RED) {
@@ -37,7 +38,7 @@ module.exports = function (RED) {
     })
   }
 
-  RED.nodes.registerType('Set-AO1', setAO1)
+  RED.nodes.registerType('CC100-Set-AO1', setAO1)
 
   // Set Analog Output 2
   function setAO2 (config) {
@@ -62,7 +63,7 @@ module.exports = function (RED) {
     })
   }
 
-  RED.nodes.registerType('Set-AO2', setAO2)
+  RED.nodes.registerType('CC100-Set-AO2', setAO2)
 
   // Read Analog Outputs
   function readAO (config) {
@@ -85,5 +86,5 @@ module.exports = function (RED) {
     })
   }
 
-  RED.nodes.registerType('Read-AO', readAO)
+  RED.nodes.registerType('CC100-Read-AO', readAO)
 }
