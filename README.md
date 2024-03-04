@@ -3,7 +3,7 @@
 ![License](https://img.shields.io/badge/License-MIT-blue.png)
 [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 [![NPM download](https://img.shields.io/badge/@plus4nodered-WAGO--CC100-green.png)](https://npm-stat.com/charts.html?package=@plus4nodered/node-red-contrib-wago-cc100)
-[![Repository GitHub](https://img.shields.io/badge/Repository-GitHub-orange.png)](https://github.com/Iniationware/CC100-Node-Red)
+[![Repository GitHub](https://img.shields.io/badge/Repository-GitHub-orange.png)](https://github.com/PLUS-for-Node-RED/node-red-contrib-wago-cc100)
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Iniationware/CC100-Node-Red)
 
 # WAGO CC100 Node-RED Contribution Package
@@ -12,11 +12,11 @@
 
 For an international area, [Iniationware][1] has provided the [PLUS for Node-RED International][2] website.
 
-## IIoT Webseite Deutschland PLUS für Node-RED
+## IIoT Webseite Deutschland PLUS for Node-RED
 
-Für einen deutschsprachigen Bereich hat [Iniationware][1] die Webseite [PLUS für Node-RED Deutschland][3] bereitgestellt.
+Für einen deutschsprachigen Bereich hat [Iniationware][1] die Webseite [PLUS for Node-RED Deutschland][3] bereitgestellt.
 
-## node-red-contrib-wago-cc100
+## @plus4nodered/node-red-contrib-wago-cc100
 
 A Node-RED library to control the IO's on your WAGO CC100.
 It enables to use Node-RED for a directly read and write 
@@ -28,14 +28,7 @@ Note: This contribution package works asynchronously!
 
 ### Examples
 
-Here some examples how to control the digital and analog signals of the WAGO CC100:
-
-| Digital                                                                                                                                  | Analog |
-|------------------------------------------------------------------------------------------------------------------------------------------| --- |
-| <img src="https://github.com/Helmut-Saal/CC100-Node-Red/blob/master/Digital.png?raw=true" alt="Digital EA" height="250px" width="450px"> | <img src="https://github.com/Helmut-Saal/CC100-Node-Red/blob/master/Analog.png?raw=true" alt="Analog EA" height="250px" width="450px"> |
-
-
-Download our examples flow from the [GitHub Demo](https://github.com/Helmut-Saal/CC100-Node-Red/blob/master/examples/)
+Download our examples flow from the [GitHub Demo](https://github.com/PLUS-for-Node-RED/node-red-contrib-wago-cc100/blob/master/examples/)
 
 You can find the examples also via the "Hamburger-Menu" inside Node-RED. 
 Goto Import and then examples and see our CC100 entries.
@@ -109,6 +102,7 @@ to clean, update, or upgrade this NPM package.
 MIT
 
 
+
 [1]:https://iniationware.com/
-[2]:https://www.noderedplus.de/
-[3]:https://www.noderedplus.de/de/
+[2]:https://www.plus4nodered.com/
+[3]:https://www.plus4nodered.de/

@@ -1,3 +1,7 @@
+# [2.0.0](https://github.com/PLUS-for-Node-RED/CC100-Node-Red/compare/v1.0.0...v2.0.0) (2024-03-04)
+
+
+
 # [1.0.0](https://github.com/PLUS-for-Node-RED/CC100-Node-Red/compare/v0.1.4...v1.0.0) (2024-03-02)
 
 
