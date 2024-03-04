@@ -1,9 +1,10 @@
 /*
  The MIT License
 
- Copyright (c) 2022 - Klaus Landsdorf (http://node-red.plus/)
+ Copyright (c) 2022-2024 - Iniationware GmbH (https://plus4nodered.com/)
+ Copyright (c) 2022 - Klaus Landsdorf (https://bianco-royal.com/)
  All rights reserved.
- @node-red-plus/node-red-contrib-wago-cc100
+ @plus4nodered/node-red-contrib-wago-cc100
  */
 
 const fs = require('fs')

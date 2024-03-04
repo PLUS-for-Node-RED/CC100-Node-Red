@@ -1,9 +1,10 @@
 /*
  The MIT License
 
- Copyright (c) 2022 - Klaus Landsdorf (http://node-red.plus/)
+ Copyright (c) 2022-2024 - Iniationware GmbH (https://plus4nodered.com/)
+ Copyright (c) 2022 - Klaus Landsdorf (https://bianco-royal.com/)
  All rights reserved.
- @node-red-plus/node-red-contrib-wago-cc100
+ @plus4nodered/node-red-contrib-wago-cc100
  */
 
 module.exports = function (RED) {
@@ -22,7 +23,7 @@ module.exports = function (RED) {
     })
   }
 
-  RED.nodes.registerType('Read-PT1', readPT1)
+  RED.nodes.registerType('CC100-Read-PT1', readPT1)
 
   // Read PT1000 Input 2
   function readPT2 (config) {
@@ -34,5 +35,5 @@ module.exports = function (RED) {
     })
   }
 
-  RED.nodes.registerType('Read-PT2', readPT2)
+  RED.nodes.registerType('CC100-Read-PT2', readPT2)
 }

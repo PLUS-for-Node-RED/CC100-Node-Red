@@ -1,42 +1,45 @@
 <!--
     The MIT License
 
-    Copyright (c) 2022 - Klaus Landsdorf (http://node-red.plus/)
+    Copyright (c) 2022-2024 - Iniationware GmbH (https://plus4nodered.com/)
+    Copyright (c) 2022 - Klaus Landsdorf (https://bianco-royal.com/)
     All rights reserved.
-    @node-red-plus/node-red-contrib-wago-cc100
+    @plus4nodered/node-red-contrib-wago-cc100
 -->
 
 <!-- Digital-In -->
 <script type="text/javascript">
-  RED.nodes.registerType('Read-DI', {
+  RED.nodes.registerType('CC100-Read-DI', {
     category: 'WAGO CC100',
-    color: '#FFFF00',
+    color: 'rgba(72,218,231,0.65)',
     defaults: {
       name: { value: '' }
     },
     inputs: 1,
     outputs: 10,
-    icon: 'feed.svg',
+    icon: 'serial.svg',
+    align: "left",
     label: function () {
-      return this.name || 'Read-DI'
+      return this.name || 'CC100 Read-DI'
     }
   })
 </script>
 
-<script type="text/html" data-template-name="Read-DI">
+<script type="text/html" data-template-name="CC100-Read-DI">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
 </script>
 
-<script type="text/html" data-help-name="Read-DI">
+<script type="text/html" data-help-name="CC100-Read-DI">
     <p>Node to read all Digital Input states on CC100 PLC</p>
-
+    <p>8 DI, DC 24 V, 2,8 mA</p>
     <ul>
         <li>Output 1-8 : DI 1-8
         <li>Output 9: All DI's as JSON object with named key:value
         <li>Output 10: Array from the DI values 1-8
     </ul>
+    <p>last Test on 9301 FIRMWARE=04.03.03(25)</p>
 </script>
 <!-- Digital-In -->

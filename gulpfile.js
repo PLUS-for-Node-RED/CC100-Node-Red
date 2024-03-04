@@ -3,7 +3,7 @@
 
  Copyright (c) 2017-2022 - Klaus Landsdorf (http://node-red.plus/)
  All rights reserved.
- @node-red-plus/node-red-contrib-wago-cc100
+ @plus4nodered/node-red-contrib-wago-cc100
  */
 
 'use strict'

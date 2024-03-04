@@ -1,162 +1,173 @@
 <!--
     The MIT License
 
-    Copyright (c) 2022 - Klaus Landsdorf (http://node-red.plus/)
+    Copyright (c) 2022-2024 - Iniationware GmbH (https://plus4nodered.com/)
+    Copyright (c) 2022 - Klaus Landsdorf (https://bianco-royal.com/)
     All rights reserved.
-    @node-red-plus/node-red-contrib-wago-cc100
+    @plus4nodered/node-red-contrib-wago-cc100
 -->
 
 <!-- Digital-Out 1 -->
 <script type="text/javascript">
-  RED.nodes.registerType('Set-DO1', {
+  RED.nodes.registerType('CC100-Set-DO1', {
     category: 'WAGO CC100',
-    color: '#FF0000',
+    color: 'rgba(246,78,171,0.65)',
     defaults: {
       name: { value: '' }
     },
     inputs: 1,
     outputs: 1,
-    icon: 'arrow-in.svg',
+    icon: 'serial.svg',
+    align: "left",
     label: function () {
-      return this.name || 'Set-DO1'
+      return this.name || 'CC100 Set-DO1'
     }
   })
 </script>
 
-<script type="text/html" data-template-name="Set-DO1">
+<script type="text/html" data-template-name="CC100-Set-DO1">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
 </script>
 
-<script type="text/html" data-help-name="Set-DO1">
+<script type="text/html" data-help-name="CC100-Set-DO1">
     <p>Node write Digital Output 1 to CC100 PLC</p>
+    <p>last Test on 9301 FIRMWARE=04.03.03(25)</p>
 </script>
 <!-- Digital-Out 1 -->
 
 
 <!-- Digital-Out 2 -->
 <script type="text/javascript">
-  RED.nodes.registerType('Set-DO2', {
+  RED.nodes.registerType('CC100-Set-DO2', {
     category: 'WAGO CC100',
-    color: '#FF0000',
+    color: 'rgba(246,78,171,0.65)',
     defaults: {
       name: { value: '' }
     },
     inputs: 1,
     outputs: 1,
-    icon: 'arrow-in.svg',
+    icon: 'serial.svg',
+    align: "left",
     label: function () {
-      return this.name || 'Set-DO2'
+      return this.name || 'CC100 Set-DO2'
     }
   })
 </script>
 
-<script type="text/html" data-template-name="Set-DO2">
+<script type="text/html" data-template-name="CC100-Set-DO2">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
 </script>
 
-<script type="text/html" data-help-name="Set-DO2">
+<script type="text/html" data-help-name="CC100-Set-DO2">
     <p>Node write Digital Output 2 to CC100 PLC</p>
+    <p>last Test on 9301 FIRMWARE=04.03.03(25)</p>
 </script>
 <!-- Digital-Out 2 -->
 
 
 <!-- Digital-Out 3 -->
 <script type="text/javascript">
-  RED.nodes.registerType('Set-DO3', {
+  RED.nodes.registerType('CC100-Set-DO3', {
     category: 'WAGO CC100',
-    color: '#FF0000',
+    color: 'rgba(246,78,171,0.65)',
     defaults: {
       name: { value: '' }
     },
     inputs: 1,
     outputs: 1,
-    icon: 'arrow-in.svg',
+    icon: 'serial.svg',
+    align: "left",
     label: function () {
-      return this.name || 'Set-DO3'
+      return this.name || 'CC100 Set-DO3'
     }
   })
 </script>
 
-<script type="text/html" data-template-name="Set-DO3">
+<script type="text/html" data-template-name="CC100-Set-DO3">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
 </script>
 
-<script type="text/html" data-help-name="Set-DO3">
+<script type="text/html" data-help-name="CC100-Set-DO3">
     <p>Node write Digital Output 3 to CC100 PLC</p>
+    <p>last Test on 9301 FIRMWARE=04.03.03(25)</p>
 </script>
 <!-- Digital-Out 3 -->
 
 
 <!-- Digital-Out 4 -->
 <script type="text/javascript">
-  RED.nodes.registerType('Set-DO4', {
+  RED.nodes.registerType('CC100-Set-DO4', {
     category: 'WAGO CC100',
-    color: '#FF0000',
+    color: 'rgba(246,78,171,0.65)',
     defaults: {
       name: { value: '' }
     },
     inputs: 1,
     outputs: 1,
-    icon: 'arrow-in.svg',
+    icon: 'serial.svg',
+    align: "left",
     label: function () {
-      return this.name || 'Set-DO4'
+      return this.name || 'CC100 Set-DO4'
     }
   })
 </script>
 
-<script type="text/html" data-template-name="Set-DO4">
+<script type="text/html" data-template-name="CC100-Set-DO4">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
 </script>
 
-<script type="text/html" data-help-name="Set-DO4">
+<script type="text/html" data-help-name="CC100-Set-DO4">
     <p>Node write Digital Output 4 to CC100 PLC</p>
+    <p>last Test on 9301 FIRMWARE=04.03.03(25)</p>
 </script>
 <!-- Digital-Out 4 -->
 
 
 <!-- Digital-Out -->
 <script type="text/javascript">
-  RED.nodes.registerType('Read-DO', {
+  RED.nodes.registerType('CC100-Read-DO', {
     category: 'WAGO CC100',
-    color: '#FF0000',
+    color: 'rgba(231,72,228,0.65)',
     defaults: {
       name: { value: '' }
     },
     inputs: 1,
     outputs: 6,
-    icon: 'arrow-in.svg',
+    icon: 'serial.svg',
+    align: "left",
     label: function () {
-      return this.name || 'Read-DO'
+      return this.name || 'CC100 Read-DO'
     }
   })
 </script>
 
-<script type="text/html" data-template-name="Read-DO">
+<script type="text/html" data-template-name="CC100-Read-DO">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
 </script>
 
-<script type="text/html" data-help-name="Read-DO">
+<script type="text/html" data-help-name="CC100-Read-DO">
     <p>Node read all Digital Output states on CC100 PLC</p>
-
+    <p>4 DO, 24 V DC, 0,5 A</p>
     <ul>
         <li>Output 1-4 : DO 1-4
         <li>Output 5: All DO's as JSON object with named key:value
         <li>Output 6: Array from the DO values 1-4
     </ul>
+    <p>last Test on 9301 FIRMWARE=04.03.03(25)</p>
 </script>
 <!-- Digital-Out -->
